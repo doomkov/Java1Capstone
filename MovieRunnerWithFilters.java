@@ -7,10 +7,10 @@ import java.util.*;
  */
 public class MovieRunnerWithFilters {
     public void printAverageRatings(){
-        int minimumRaters = 4;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        int yrFilVal = 2012;
+        int minimumRaters = 35;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        int yrFilVal = 1900;
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
         MovieDatabase.initialize(moviefile);
@@ -34,14 +34,15 @@ public class MovieRunnerWithFilters {
         System.out.println("Number of movies rated: "+ MovieDatabase.size());
         System.out.println("Number of movies after " + yrFilVal + ": "+ MovieDatabase.filterBy(yrFilter).size());
         System.out.println("Number of raters: "+ sr.getRaterSize());
+        System.out.println("Number of movies with min raters: "+ avgRatings.size());
         System.out.println("Number of movies after " + yrFilVal + " with minimum of " + minimumRaters + " raters: "+ afterYrCount);
         
     }
     
     public void printAverageRatingsByYear(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
+        int minimumRaters = 20;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
         int yrFilVal = 2000;
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
@@ -61,10 +62,10 @@ public class MovieRunnerWithFilters {
     }
     
     public void printAverageRatingsByGenre(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        String genreFilVal = "Crime";
+        int minimumRaters = 20;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        String genreFilVal = "Comedy";
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
         MovieDatabase.initialize(moviefile);
@@ -82,11 +83,11 @@ public class MovieRunnerWithFilters {
     }
     
     public void printAverageRatingsByMinutes(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        int minMinutes = 110;
-        int maxMinutes = 170;
+        int minimumRaters = 5;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        int minMinutes = 105;
+        int maxMinutes = 135;
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
         MovieDatabase.initialize(moviefile);
@@ -104,10 +105,10 @@ public class MovieRunnerWithFilters {
     }
     
     public void printAverageRatingsByDirectors(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        String directors = "Charles Chaplin,Michael Mann,Spike Jonze";
+        int minimumRaters = 4;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        String directors = "Clint Eastwood,Joel Coen,Martin Scorsese,Roman Polanski,Nora Ephron,Ridley Scott,Sydney Pollack";
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
         MovieDatabase.initialize(moviefile);
@@ -125,11 +126,11 @@ public class MovieRunnerWithFilters {
     }
     
     public void printAverageRatingsByYearAfterAndGenre(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        int year = 1980;
-        String genre = "Romance";
+        int minimumRaters = 8;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        int year = 1990;
+        String genre = "Drama";
         
         ThirdRatings sr = new ThirdRatings(ratingsfile);
         MovieDatabase.initialize(moviefile);
@@ -151,14 +152,14 @@ public class MovieRunnerWithFilters {
     
     
     public void printAverageRatingsByDirectorsAndMinutes(){
-        int minimumRaters = 1;
-        String moviefile = "ratedmovies_short.csv";
-        String ratingsfile = "data/ratings_short.csv";
-        String directors = "Spike Jonze,Michael Mann,Charles Chaplin,Francis Ford Coppola";
-        int minMinutes = 30;
-        int maxMinutes = 170;
+        int minimumRaters = 3;
+        String moviefile = "ratedmoviesfull.csv";
+        String ratingsfile = "data/ratings.csv";
+        String directors = "Clint Eastwood,Joel Coen,Tim Burton,Ron Howard,Nora Ephron,Sydney Pollack";
+        int minMinutes = 90;
+        int maxMinutes = 180;
         
-        ThirdRatings sr = new ThirdRatings(ratingsfile);
+        ThirdRatings sr = new ThirdRatings(ratingsfile);	
         MovieDatabase.initialize(moviefile);
         
         AllFilters dirMinFilter = new AllFilters();
